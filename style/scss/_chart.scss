@@ -1,0 +1,65 @@
+.axis path,
+.axis line {
+  fill: none;
+  stroke: $dark-grey;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  // display: none;
+}
+
+.line {
+  fill: none;
+  // stroke: $blue;
+  stroke-width: 3px;
+}
+
+.tick {
+  font-size: 0.5em;
+  @media (min-width: 1000px) {
+    font-size: 0.8em;
+  }
+}
+
+.key-text {
+  font-size: 0.7em;
+}
+.slice path {
+  stroke: #fff;
+}
+.cat {
+  display: inline-block;
+}
+.dot {
+  border-radius: 7px;
+  height: 14px;
+  width: 14px;
+}
+.legend {
+  height: 40px;
+  padding-left: 3px;
+  text-align: center;
+}
+.l-text {
+  font-family: "Futura Today Light", Arial,sans-serif;
+  font-size: 0.7em;
+  padding-right: 5px;
+  position: relative;
+  text-transform: uppercase;
+  top: -2px;
+}
+.dot.l-white {
+  background: #156283;
+}
+.dot.l-black {
+  background: #1b9cfa;
+}.dot.l-hispanic {
+  background: #78c8fb;
+}.dot.l-asian {
+  background: #abdcfb;
+}.dot.l-other {
+  background: #8D8F91;
+}
+
+

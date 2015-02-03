@@ -1,0 +1,112 @@
+.data-sub {
+  display: none;
+  font-family: "Futura Today Light", Arial,sans-serif;
+}
+
+.data-head {
+  display: none;
+  font-family: "Futura Today", Arial,sans-serif;
+  font-size: 1.6em;
+  text-transform: uppercase;
+}
+
+.data-list {
+  list-style: none;
+  margin: 0.5em;
+  padding: 0;
+}
+
+.panel-data {
+  display: block;
+  height: auto;
+  padding: 1em 0;
+  position: relative;
+  &.hidden {
+    display: none;
+  }
+}
+
+.panel-wrap {
+  color: $dark-grey;
+  
+}
+
+.data-wrap {
+  padding:1em;
+   @extend .group;
+}
+
+.county-item {
+  color: $blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+.data-section {
+  display: block;
+  float: none;
+ 
+  @media (min-width: 600px) {
+    float: left;
+    display: inline-block;
+    width: 50%;
+  }
+}
+.chart-title {
+  font-family: "Futura Today", Arial,sans-serif;
+  margin-top: 1em;
+  text-transform: uppercase;
+}
+.panel-info {
+  text-align: center;
+}
+.bar-chart-box {
+  height: 135px;
+  position: relative;
+  width: 100%
+}
+.bar-box {
+  bottom: 0px;
+  left: 4%;
+  position: absolute;
+  width: 14%;
+}
+.bar-box.mid {
+  left: 43%;
+}
+.bar-box.right {
+  left: 82%;
+}
+.pie-box.mid {
+  left: 40%;
+}
+.pie-box.right {
+  left: 79%;
+}
+.bar {
+    background: #1b9cfa;
+  height: 0px;
+}
+.bar-text {
+  font-family: "Futura Today Light", Arial,sans-serif;
+  text-align: center;
+}
+.bar-label {
+  font-family: "Futura Today", Arial,sans-serif;
+  text-align: center;
+}
+.bar.hide {
+  display: none;
+}
+.race-label {
+  font-family: "Futura Today", Arial,sans-serif;
+  margin-top: 15px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.pie-box {
+  left: 1%;
+  position: absolute;
+  width: 20%
+}
