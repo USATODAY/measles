@@ -8,9 +8,10 @@ mobile.dataListItems = jQuery(".data-list").find("li");
 mobile.panelWrap = jQuery(".panel-wrap");
 mobile.dataWrap = jQuery(".data-wrap");
 mobile.stateMenu = jQuery(".state-menu");
-mobile.arrBarText = jQuery(".bar-text");
-mobile.arrBars = jQuery(".bar");
+mobile.arrDataText = jQuery(".data-text");
+mobile.arrDataNumbers = jQuery(".data-number");
 mobile.arrPies = jQuery(".pie-box");
+
 
 mobile.currentFocus = null;
 
@@ -35,10 +36,10 @@ mobile.setPanelInfo = function (data) {
         mobile.panelWrap.eq(0).show();
         mobile.dataCharts.addClass("show");
 
-        mobile.panelHead.text(data.school);
+        mobile.panelHead.text(data.Name);
 
 
-        mobile.panelSub.text(data.city + ", " + data.state);
+        //mobile.panelSub.text(data.City + ", " + data.State);
         mobile.panelSub.show();
         mobile.drawChart(data);
 
@@ -109,47 +110,29 @@ mobile.numberWithCommas = function (x) {
 mobile.drawChart = function (prop) {
 
     if (prop !== null) {
-        var chartData = mobile.createChartArray(prop, "CTY"),
-            chartData2 = mobile.createChartArray(prop, "STATE");
-
-        //Drawing bar chart
-        var arrDivIndex = [];
-        arrDivIndex[0] = prop.d1991;
-        arrDivIndex[1] = prop.d2001;
-        arrDivIndex[2] = prop.d2011;
-        jQuery.each(arrDivIndex, function (index) {
-            if (arrDivIndex[index] === "") {
-                mobile.arrBars.eq(index).addClass("hide");
-                mobile.arrBarText.eq(index).html("NA");
-            } else {
-                mobile.arrBars.eq(index).height(parseInt(arrDivIndex[index]));
-                mobile.arrBars.eq(index).removeClass("hide");
-                mobile.arrBarText.eq(index).html(arrDivIndex[index]);
-            }
-        });
-
         //drawing pie charts
+        var numComplete = prop.Complete;
+        var numEnroll = parseInt(prop.Enrollment);
+        if (isNaN(numEnroll)) {
+            mobile.arrDataNumbers.eq(0).html("NA");
+        } else {
+            mobile.arrDataNumbers.eq(0).html(mobile.numberWithCommas(numEnroll));
+        }
+        console.log(numComplete);
+        if (isNaN(numComplete) || (numComplete === "")) {
+            numComplete = parseFloat(prop.MMR * 100);
+            if (isNaN(numComplete)) {
+                numComplete = -1;
+                mobile.arrDataNumbers.eq(1).html("NA");
+            } else {
+                mobile.arrDataNumbers.eq(1).html(numComplete.toString() + "<span class=\"small_pct\">%</span>");
+            }
+        }
+
         var arrRace = [];
         arrRace[0] = [
-            {"label": "White", "value": Math.round(parseFloat(prop.pw91) * 100)},
-            {"label": "Black", "value": Math.round(parseFloat(prop.pb91) * 100)},
-            {"label": "Hispanic", "value": Math.round(parseFloat(prop.ph91) * 100)},
-            {"label": "Asian", "value": Math.round(parseFloat(prop.pa91) * 100)},
-            {"label": "Other", "value": Math.round(parseFloat(prop.po91) * 100)}
-        ];
-        arrRace[1] = [
-            {"label": "White", "value": Math.round(parseFloat(prop.pw01) * 100)},
-            {"label": "Black", "value": Math.round(parseFloat(prop.pb01) * 100)},
-            {"label": "Hispanic", "value": Math.round(parseFloat(prop.ph01) * 100)},
-            {"label": "Asian", "value": Math.round(parseFloat(prop.pa01) * 100)},
-            {"label": "Other", "value": Math.round(parseFloat(prop.po01) * 100)}
-        ];
-        arrRace[2] = [
-            {"label": "White", "value": Math.round(parseFloat(prop.pw11) * 100)},
-            {"label": "Black", "value": Math.round(parseFloat(prop.pb11) * 100)},
-            {"label": "Hispanic", "value": Math.round(parseFloat(prop.ph11) * 100)},
-            {"label": "Asian", "value": Math.round(parseFloat(prop.pa11) * 100)},
-            {"label": "Other", "value": Math.round(parseFloat(prop.po11) * 100)}
+            {"label": "Complete", "value": numComplete},
+            {"label": "Incomplete", "value": 100 - numComplete}
         ];
         $el = $(".data-charts");
 
@@ -161,31 +144,36 @@ mobile.drawChart = function (prop) {
         mobile.arrPies.empty();
         var data = [];
         var vis, pie, arc, arcs;
-        var color = d3.scale.ordinal().range(["#156283", "#1b9cfa", "#78c8fb", "#abdcfb", "#8D8F91"]);
-        jQuery.each(arrRace, function (index) {
+        var color = d3.scale.ordinal().range(["#156283", "#1b9cfa"]);
+        if (numComplete !== -1) {
+            jQuery.each(arrRace, function (index) {
 
-            data = arrRace[index];
+                data = arrRace[index];
 
-            vis = d3.select('#pie' + index.toString()).append("svg:svg").data([data]).attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")");
-            pie = d3.layout.pie().value(function (d) {
-                return d.value;
-            });
-
-            // declare an arc generator function
-            arc = d3.svg.arc().outerRadius(r);
-
-            // select paths, use arc generator to draw
-            arcs = vis.selectAll("g.slice").data(pie).enter().append("svg:g").attr("class", "slice");
-            arcs.append("svg:path")
-                .attr("fill", function (d, i) {
-                    return color(i);
-                })
-                .attr("d", function (d) {
-
-                    return arc(d);
+                vis = d3.select('#pie' + index.toString()).append("svg:svg").data([data]).attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")");
+                pie = d3.layout.pie().value(function (d) {
+                    return d.value;
                 });
 
-        });
+                // declare an arc generator function
+                arc = d3.svg.arc().outerRadius(r);
+
+                // select paths, use arc generator to draw
+                arcs = vis.selectAll("g.slice").data(pie).enter().append("svg:g").attr("class", "slice");
+                arcs.append("svg:path")
+                    .attr("fill", function (d, i) {
+                        return color(i);
+                    })
+                    .attr("d", function (d) {
+
+                        return arc(d);
+                    });
+
+            });
+            mobile.arrPies.removeClass("hide");
+        } else {
+            mobile.arrPies.addClass("hide");
+        }
 
     }
 
@@ -222,22 +210,6 @@ mobile.lookup = function (array, key, value) {
     return result;
 };
 
-mobile.createChartArray = function (dataEntry, strPrefix) {
-    var result = [];
-
-    for (var i = 0; i < 11; i++) {
-        var year = 1960 + (10 * i);
-        var dataKey = strPrefix + year;
-        var obj = {
-            "year": year,
-            "index": dataEntry[dataKey]
-        };
-
-        result.push(obj);
-    }
-
-    return result;
-};
 
 mobile.listen = function () {
 
@@ -282,6 +254,7 @@ $(document).ready(function () {
         $scope.companies = [];
         $scope.stateOptions = [
             {state: "State"},
+            {state: "AZ"},
             {state: "CA"},
             {state: "ID"},
             {state: "IL"},

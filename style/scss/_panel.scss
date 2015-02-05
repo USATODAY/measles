@@ -107,6 +107,9 @@
 }
 .pie-box {
   left: 1%;
-  position: absolute;
+  position: relative;
   width: 20%
+}
+.pie-box.hide {
+  display: none;
 }

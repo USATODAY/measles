@@ -6,7 +6,8 @@
     <meta property="fb:app_id" content="215046668549694"/>
     <meta property="og:description" content=""/>
     <meta property="og:image" content="Image">
-    <meta property="og:url" content="http://www.gannett-cdn.com/experiments/usatoday/2014/11/diversity-school/index.html"/>
+    <meta property="og:url"
+          content="http://www.gannett-cdn.com/experiments/usatoday/2014/11/diversity-school/index.html"/>
     <meta property="og:type" content="website">
     <meta property="og:title" content="Changing Face Of America"/>
     <title>The Changing Face Of America</title>
@@ -61,75 +62,45 @@
             </div>
             <!-- <div class="clear-button" ng-click ="search.clear()"><img src="img/close-icon.svg" alt=""></div> -->
             <ul class="list-group" ng-show="isFormOpen" id="search_results" ng-focus="isFormOpen = True">
-                <li class="list-group-item ng-cloak" ng-repeat="school in filteredArray" ng-click="search.setFocus(school)">
-                    <h3 class="search-name">{{school.school}}</h3>
-                    <h4 class="search-detail">{{school.city}}, {{school.state}}</h4>
-        
+                <li class="list-group-item ng-cloak" ng-repeat="school in filteredArray"
+                    ng-click="search.setFocus(school)">
+                    <h3 class="search-name">{{school.Name}}</h3>
+                    <h4 class="search-detail">{{school.City}}, {{school.State}}</h4>
+                    <h4 class="search-detail">{{school.County}}</h4>
                 </li>
             </ul>
             <div class="mobile-company-info-box">Use the search section above to find your school.</div>
-    </div>
+        </div>
     </div>
 
     <div class="panel-wrap">
         <div class="panel-inner-wrap">
             <div class="panel-data">
-            
-            
                 <div class="panel-info">
-                    
-            
                     <h3 class="data-head" id="panel-head"></h3>
-                    <h4 class="data-sub" id="panel-sub"></h4>
-                    <h3 class="chart-title">Diversity index:</h3> 
-                </div>
-            
-            
-            </div>
-            <div class="bar-chart-box">
-                <div class="bar-box">
-                    <div class="bar-text"></div>
-                    <div class="bar"></div>
-                    <div class="bar-label">1991</div>
-                </div>
-                <div class="bar-box mid">
-                    <div class="bar-text"></div>
-                    <div class="bar"></div>
-                    <div class="bar-label">2001</div>
-                </div>
-                <div class="bar-box right">
-                    <div class="bar-text"></div>
-                    <div class="bar"></div>
-                    <div class="bar-label">2011</div>
                 </div>
             </div>
-            <div class="race-label">Racial Breakdown:</div>
             <div class="data-charts">
+                <div class="data-block">
+                    <div class="data-number"></div>
+                    <div class="data-text">Total Enrollment</div>
+                </div>
                 <div id="pie0" class="pie-box"></div>
-                <div id="pie1" class="pie-box mid"></div>
-                <div id="pie2" class="pie-box right"></div>
-            </div>
-            <div class="legend">
-                <div class="cat dot l-white"></div>
-                <div class="cat l-text">White</div>
-                <div class="cat dot l-black"></div>
-                <div class="cat l-text">Black</div>
-                <div class="cat dot l-hispanic"></div>
-                <div class="cat l-text">Hispanic</div>
-                <div class="cat dot l-asian"></div>
-                <div class="cat l-text">Asian</div>
-                <div class="cat dot l-other"></div>
-                <div class="cat l-text">Other</div>
+                <div class="data-block">
+                    <div class="data-number"></div>
+                    <div class="data-text">Complete Immunization</div>
+                </div>
             </div>
         </div>
     </div>
-    
-        <div class="inner-wrap buttom-buttons">
-            <div class="info-button" ng-click="showInfo()"><img src="img/info.svg" alt="info"></div>
-            <a href="http://www.usatoday.com/longform/news/nation/2014/11/21/minnesota-school-race-diversity/18919391/" target="_blank" class="article-button button">Read Story</a>
-        
-            <div class="share-button" ng-click="showShare()"><img src="img/options.svg" alt="share"></div>
-        </div>
+
+    <div class="inner-wrap buttom-buttons">
+        <div class="info-button" ng-click="showInfo()"><img src="img/info.svg" alt="info"></div>
+        <a href="http://www.usatoday.com/longform/news/nation/2014/11/21/minnesota-school-race-diversity/18919391/"
+           target="_blank" class="article-button button">Read Story</a>
+
+        <div class="share-button" ng-click="showShare()"><img src="img/options.svg" alt="share"></div>
+    </div>
 
     <div class="share-page">
         <div class="share-close-button" ng-click="hideShare()"><img src="img/close.svg" alt="close" class="close-icon">
@@ -151,14 +122,19 @@
         </div>
         <h2 class="info-title share-title">About this data</h2>
 
-        <p class="info-text">Diversity index shows – on a scale from 0  to 100 – the chance that two randomly chosen students in a school are from different racial/ethnic groups. “Other” includes American Indian/Alaska Native, Native Hawaiian/Pacific Islander and anyone claiming two or more races. Data compiled in annual surveys of public K-12 schools by the National Center for Education Statistics.
- </p>
+        <p class="info-text">Diversity index shows – on a scale from 0 to 100 – the chance that two randomly chosen
+            students in a school are from different racial/ethnic groups. “Other” includes American Indian/Alaska
+            Native, Native Hawaiian/Pacific Islander and anyone claiming two or more races. Data compiled in annual
+            surveys of public K-12 schools by the National Center for Education Statistics.
+        </p>
 
         <h2 class="info-title share-title">Credits</h2>
 
         <p class="info-text">Tory Hargo, Paul Overberg, Chad Palmer, USA TODAY </p>
 
-        <p class="info-text"><strong>Source: </strong> USA TODAY analysis of data from National Center for Education Statistics.</p>
+        <p class="info-text"><strong>Source: </strong> USA TODAY analysis of data from National Center for Education
+            Statistics.</p>
+
         <p class="info-text"><strong>Photo Credits: </strong>USA TODAY</p>
 
     </div>
@@ -173,13 +149,16 @@
 
 </script>
 <script src="js/app.min.js"></script>
-  <script>window.twttr = (function (d, s, id) {
-  var t, js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src= "https://platform.twitter.com/widgets.js";
-  fjs.parentNode.insertBefore(js, fjs);
-  return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } });
+<script>window.twttr = (function (d, s, id) {
+    var t, js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    return window.twttr || (t = { _e: [], ready: function (f) {
+        t._e.push(f)
+    } });
 }(document, "script", "twitter-wjs"));</script>
 </body>
 </html>
