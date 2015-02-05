@@ -11,6 +11,23 @@ mobile.stateMenu = jQuery(".state-menu");
 mobile.arrDataText = jQuery(".data-text");
 mobile.arrDataNumbers = jQuery(".data-number");
 mobile.arrPies = jQuery(".pie-box");
+mobile.dataContainer = jQuery(".data-container");
+mobile.chatterBox = jQuery(".mobile-company-info-box");
+mobile.arrStateText = [
+    "Use the search section above to find your school.",
+    "Use the search section above to find your school.",
+    "Use the search section above to find your school.",
+    "Use the search section above to find your school.",
+    "Illinois’ data includes all students K-12.",
+    "Massachusetts’ Medical Exemption rate includes both medical and religious exemptions. In Massachusetts, data for schools with fewer than 30 kindergartners has been redacted.",
+    "Minnesota’s Medical Exemption rate includes both medical and conscientious objections.",
+    "Use the search section above to find your school.",
+    "New York’s data includes all students K-12. The MMR rate references the percentage of students who specifically have been vaccinated for measles.",
+    "Use the search section above to find your school.",
+    "In Virginia, the location of each school refers to the state health district.",
+    "Vermont’s data includes all students K-12.",
+    "In West Virginia, data for schools with fewer than 30 kindergartners has been redacted."
+];
 
 
 mobile.currentFocus = null;
@@ -42,8 +59,98 @@ mobile.setPanelInfo = function (data) {
         //mobile.panelSub.text(data.City + ", " + data.State);
         mobile.panelSub.show();
         mobile.drawChart(data);
+        mobile.renderTable(data);
 
     }
+};
+
+mobile.renderTable = function (prop) {
+    var numParam;
+    var strHTML = "";
+    strHTML += '<table class="data-table" cellspacing="0" cellpadding="0" border="0">';
+    strHTML += '    <tr>';
+    strHTML += '        <td>Measles, Mumps, Rubella</td>';
+    numParam = prop.MMR;
+    if (isNaN(numParam) || (numParam === "")) {
+        strHTML += '        <td>NA</td>';
+    } else {
+        strHTML += '        <td>' + (Math.round(numParam * 10000) / 100).toString() + '%</td>';
+    }
+    strHTML += '    </tr>';
+    strHTML += '    <tr>';
+    strHTML += '        <td>Diphtheria, Tetanus, Pertussis</td>';
+    numParam = prop.DTaP;
+    if (isNaN(numParam) || (numParam === "")) {
+        strHTML += '        <td>NA</td>';
+    } else {
+        strHTML += '        <td>' + (Math.round(numParam * 10000) / 100).toString() + '%</td>';
+    }
+    strHTML += '    </tr>';
+    strHTML += '    <tr>';
+    strHTML += '        <td>Polio</td>';
+    numParam = prop.Polio;
+    if (isNaN(numParam) || (numParam === "")) {
+        strHTML += '        <td>NA</td>';
+    } else {
+        strHTML += '        <td>' + (Math.round(numParam * 10000) / 100).toString() + '%</td>';
+    }
+    strHTML += '    </tr>';
+    strHTML += '    <tr>';
+    strHTML += '        <td>Hepatitis B</td>';
+    numParam = prop.HepB;
+    if (isNaN(numParam) || (numParam === "")) {
+        strHTML += '        <td>NA</td>';
+    } else {
+        strHTML += '        <td>' + (Math.round(numParam * 10000) / 100).toString() + '%</td>';
+    }
+    strHTML += '    </tr>';
+    strHTML += '    <tr>';
+    strHTML += '        <td>Varicella</td>';
+    numParam = prop.Varicella;
+    if (isNaN(numParam) || (numParam === "")) {
+        strHTML += '        <td>NA</td>';
+    } else {
+        strHTML += '        <td>' + (Math.round(numParam * 10000) / 100).toString() + '%</td>';
+    }
+    strHTML += '    </tr>';
+    strHTML += '    <tr>';
+    strHTML += '        <td>Medical Exemptions</td>';
+    numParam = prop.Medical;
+    if (isNaN(numParam) || (numParam === "")) {
+        strHTML += '        <td>NA</td>';
+    } else {
+        strHTML += '        <td>' + (Math.round(numParam * 10000) / 100).toString() + '%</td>';
+    }
+    strHTML += '    </tr>';
+    strHTML += '    <tr>';
+    strHTML += '        <td>Philosophical Exemptions</td>';
+    numParam = prop.Philosophical;
+    if (isNaN(numParam) || (numParam === "")) {
+        strHTML += '        <td>NA</td>';
+    } else {
+        strHTML += '        <td>' + (Math.round(numParam * 10000) / 100).toString() + '%</td>';
+    }
+    strHTML += '    </tr>';
+    strHTML += '    <tr>';
+    strHTML += '        <td>Religious Exemptions</td>';
+    numParam = prop.Religious;
+    if (isNaN(numParam) || (numParam === "")) {
+        strHTML += '        <td>NA</td>';
+    } else {
+        strHTML += '        <td>' + (Math.round(numParam * 10000) / 100).toString() + '%</td>';
+    }
+    strHTML += '    </tr>';
+    strHTML += '    <tr>';
+    strHTML += '        <td>Missing Records</td>';
+    numParam = prop.NoRecords;
+    if (isNaN(numParam) || (numParam === "")) {
+        strHTML += '        <td>NA</td>';
+    } else {
+        strHTML += '        <td>' + (Math.round(numParam * 10000) / 100).toString() + '%</td>';
+    }
+    strHTML += '    </tr>';
+    strHTML += '</table>';
+    mobile.dataContainer.html(strHTML);
 };
 
 mobile.getSimilarCounties = function (data) {
@@ -118,15 +225,12 @@ mobile.drawChart = function (prop) {
         } else {
             mobile.arrDataNumbers.eq(0).html(mobile.numberWithCommas(numEnroll));
         }
-        console.log(numComplete);
         if (isNaN(numComplete) || (numComplete === "")) {
-            numComplete = parseFloat(prop.MMR * 100);
-            if (isNaN(numComplete)) {
-                numComplete = -1;
-                mobile.arrDataNumbers.eq(1).html("NA");
-            } else {
-                mobile.arrDataNumbers.eq(1).html(numComplete.toString() + "<span class=\"small_pct\">%</span>");
-            }
+            numComplete = -1;
+            mobile.arrDataNumbers.eq(1).html("NA");
+        } else {
+            numComplete = Math.round(prop.Complete * 10000) / 100;
+            mobile.arrDataNumbers.eq(1).html(numComplete.toString() + "<span class=\"small_pct\">%</span>");
         }
 
         var arrRace = [];
@@ -144,7 +248,7 @@ mobile.drawChart = function (prop) {
         mobile.arrPies.empty();
         var data = [];
         var vis, pie, arc, arcs;
-        var color = d3.scale.ordinal().range(["#156283", "#1b9cfa"]);
+        var color = d3.scale.ordinal().range(["#156283", "#ffffff"]);
         if (numComplete !== -1) {
             jQuery.each(arrRace, function (index) {
 
@@ -230,7 +334,6 @@ $(document).ready(function () {
         $("#header").hide();
         $(".mobile-footer-link").hide();
         $(".article-button").hide();
-        //$(".mobile-company-info-box").hide();
     }
 
     mobile.listen();
@@ -256,6 +359,7 @@ $(document).ready(function () {
             {state: "State"},
             {state: "AZ"},
             {state: "CA"},
+            {state: "FL"},
             {state: "ID"},
             {state: "IL"},
             {state: "MA"},
@@ -264,17 +368,25 @@ $(document).ready(function () {
             {state: "NY"},
             {state: "RI"},
             {state: "VA"},
-            {state: "VT"}
+            {state: "VT"},
+            {state: "WV"}
         ];
         $scope.stateItem = {
             states: $scope.stateOptions[0]
         };
 
         this.loadStateData = function () {
-            $http.get("js/data/" + mobile.stateMenu.eq(0).children("option:selected").text().toLowerCase() + ".json").then(function (data) {
-                mobile.data = data.data;
-                $scope.data = data.data;
-            });
+            mobile.panelWrap.eq(0).hide();
+            if (mobile.stateMenu.eq(0).children("option:selected").index() > 0) {
+                mobile.chatterBox.html(mobile.arrStateText[mobile.stateMenu.eq(0).children("option:selected").index() - 1]);
+                $http.get("js/data/" + mobile.stateMenu.eq(0).children("option:selected").text().toLowerCase() + ".json").then(function (data) {
+                    mobile.data = data.data;
+                    $scope.data = data.data;
+                });
+            } else {
+                mobile.chatterBox.html("Use the search section above to find your school.");
+            }
+            mobile.chatterBox.show();
         };
 
         this.checkMenu = function () {
@@ -321,12 +433,13 @@ $(document).ready(function () {
             mobile.panelWrap.eq(0).hide();
 
             $scope.filteredArray = $filter("filter")($scope.data, $scope.filterTerm, false);
-            if ($scope.filteredArray.length === 0) {
-                $(".mobile-company-info-box").show();
+            if ($scope.filteredArray.length > 400) {
+                $scope.filteredArray.length = 0;
             }
-
-            else {
-                $(".mobile-company-info-box").hide();
+            if ($scope.filteredArray.length === 0) {
+                mobile.chatterBox.show();
+            } else {
+                mobile.chatterBox.hide();
             }
 
             if ($scope.filterTerm !== "") {
@@ -335,7 +448,7 @@ $(document).ready(function () {
             }
             else {
                 $scope.isFormOpen = false;
-                $(".mobile-company-info-box").show();
+                mobile.chatterBox.show();
             }
         };
 
@@ -366,32 +479,32 @@ $(document).ready(function () {
                 encodedStr,
                 encodedStrTE;
 
-            var encodedBaseURL = encodeURIComponent("http://www.gannett-cdn.com/experiments/usatoday/2014/11/diversity-school/");
+            var encodedBaseURL = encodeURIComponent("http://www.gannett-cdn.com/experiments/usatoday/2015/02/measles/");
 
             if (schoolObj) {
-                copy = "My school, " + schoolObj.school + " in " + schoolObj.city + ", " + schoolObj.state + ",  has a diversity index of " + schoolObj.d2011 + " in 2011. Look up your school.";
-                encodedURL = encodeURIComponent("http://www.gannett-cdn.com/experiments/usatoday/2014/11/diversity-school/index.html");
-                encodedURL2 = encodeURI("http://www.gannett-cdn.com/experiments/usatoday/2014/11/diversity-school/index.html");
+                copy = "My school, " + schoolObj.Name + " in " + schoolObj.City + ", " + schoolObj.State + ",  has a complete vaccination rate of " + (Math.round(schoolObj.Complete * 10000) / 100).toString() + ". Look up your school.";
+                encodedURL = encodeURIComponent("http://www.gannett-cdn.com/experiments/usatoday/2015/02/measles/index.html");
+                encodedURL2 = encodeURI("http://www.gannett-cdn.com/experiments/usatoday/2015/02/measles/index.html");
                 encodedStr = encodeURIComponent(copy);
                 encodedStr = encodeURI(encodedStr);
                 encodedStrTE = encodeURIComponent(copy);
             }
 
             else {
-                copy = "How diverse are your local schools? Look up their scores @USATODAY #ChangingFace";
-                encodedURL = encodeURIComponent("http://www.gannett-cdn.com/experiments/usatoday/2014/11/diversity-school/index.html");
-                encodedURL2 = encodeURI("http://www.gannett-cdn.com/experiments/usatoday/2014/11/diversity-school/index.html");
+                copy = "How vaccinated are your local schools? Look up their rates @USATODAY";
+                encodedURL = encodeURIComponent("http://www.gannett-cdn.com/experiments/usatoday/2015/02/measles/index.html");
+                encodedURL2 = encodeURI("http://www.gannett-cdn.com/experiments/usatoday/2015/02/measles/index.html");
                 encodedStr = encodeURIComponent(copy);
                 encodedStr = encodeURI(encodedStr);
                 encodedStrTE = encodeURIComponent(copy);
             }
 
-            var encodedTitle = encodeURIComponent("School Diversity Index");
+            var encodedTitle = encodeURIComponent("School Vaccination Rate");
             var fbRedirectUrl = encodeURIComponent("http://www.gannett-cdn.com/usatoday/_common/_dialogs/fb-share-done.html");
 
             var tweetUrl = "https://twitter.com/intent/tweet?url=" + encodedURL + "&text=" + encodedStrTE + "";
 
-            var fbUrl = "javascript: var sTop=window.screen.height/2-(218);var sLeft=window.screen.width/2-(313);window.open('https://www.facebook.com/dialog/feed?display=popup&app_id=215046668549694&link=" + encodedURL2 + "&picture=http://www.gannett-cdn.com/experiments/usatoday/2014/11/diversity-school/img/fb-share.jpg&name=" + encodedTitle + "&description=" + encodedStr + "&redirect_uri=http://www.gannett-cdn.com/experiments/usatoday/_common/_dialogs/fb-share-done.html','sharer','toolbar=0,status=0,width=580,height=400,top='+sTop+',left='+sLeft);Analytics.click('Facebook share');void(0);";
+            var fbUrl = "javascript: var sTop=window.screen.height/2-(218);var sLeft=window.screen.width/2-(313);window.open('https://www.facebook.com/dialog/feed?display=popup&app_id=215046668549694&link=" + encodedURL2 + "&picture=http://www.gannett-cdn.com/experiments/usatoday/2015/02/measles/img/fb-share.jpg&name=" + encodedTitle + "&description=" + encodedStr + "&redirect_uri=http://www.gannett-cdn.com/experiments/usatoday/_common/_dialogs/fb-share-done.html','sharer','toolbar=0,status=0,width=580,height=400,top='+sTop+',left='+sLeft);Analytics.click('Facebook share');void(0);";
 
 
             var emailURL = "mailto:?body=" + encodedStrTE + "%0d%0d" + encodedURL + "&subject=" + encodedTitle;

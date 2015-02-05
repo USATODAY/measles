@@ -7,10 +7,10 @@
     <meta property="og:description" content=""/>
     <meta property="og:image" content="Image">
     <meta property="og:url"
-          content="http://www.gannett-cdn.com/experiments/usatoday/2014/11/diversity-school/index.html"/>
+          content="http://www.gannett-cdn.com/experiments/usatoday/2015/02/measles/index.html"/>
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Changing Face Of America"/>
-    <title>The Changing Face Of America</title>
+    <meta property="og:title" content="Vaccine uptake by school"/>
+    <title>Vaccine uptake by school</title>
     <script type="text/javascript"
             src="http://www.gannett-cdn.com/experiments/usatoday/_common/_scripts/jquery-1.11.0.min.js"></script>
     <script type="text/javascript"
@@ -65,8 +65,10 @@
                 <li class="list-group-item ng-cloak" ng-repeat="school in filteredArray"
                     ng-click="search.setFocus(school)">
                     <h3 class="search-name">{{school.Name}}</h3>
-                    <h4 class="search-detail">{{school.City}}, {{school.State}}</h4>
+                    <h4 class="search-detail">{{school.City}}</h4>
                     <h4 class="search-detail">{{school.County}}</h4>
+                    <h4 class="search-detail">{{school.DISTRICT}}</h4>
+                    <h4 class="search-detail">{{school.State}}</h4>
                 </li>
             </ul>
             <div class="mobile-company-info-box">Use the search section above to find your school.</div>
@@ -81,22 +83,23 @@
                 </div>
             </div>
             <div class="data-charts">
-                <div class="data-block">
+                <div class="data-block right">
                     <div class="data-number"></div>
                     <div class="data-text">Total Enrollment</div>
                 </div>
                 <div id="pie0" class="pie-box"></div>
-                <div class="data-block">
+                <div class="data-block left">
                     <div class="data-number"></div>
                     <div class="data-text">Complete Immunization</div>
                 </div>
             </div>
+            <div class="data-container"></div>
         </div>
     </div>
 
     <div class="inner-wrap buttom-buttons">
         <div class="info-button" ng-click="showInfo()"><img src="img/info.svg" alt="info"></div>
-        <a href="http://www.usatoday.com/longform/news/nation/2014/11/21/minnesota-school-race-diversity/18919391/"
+        <a href="http://www.usatoday.com/story/news/2015/02/04/schoolvaccinationrates/22840549/"
            target="_blank" class="article-button button">Read Story</a>
 
         <div class="share-button" ng-click="showShare()"><img src="img/options.svg" alt="share"></div>
@@ -122,18 +125,14 @@
         </div>
         <h2 class="info-title share-title">About this data</h2>
 
-        <p class="info-text">Diversity index shows – on a scale from 0 to 100 – the chance that two randomly chosen
-            students in a school are from different racial/ethnic groups. “Other” includes American Indian/Alaska
-            Native, Native Hawaiian/Pacific Islander and anyone claiming two or more races. Data compiled in annual
-            surveys of public K-12 schools by the National Center for Education Statistics.
+        <p class="info-text">School data includes the measles vaccination rate for kindergartners, though states may have released rates for all students, all vaccines or in some cases, exemption rate by type (medical, philosophical, religious, etc.). Other states could not provide data at the building level, or did not keep the data at all, in spite of Centers for Disease Control recommendations. USA TODAY did not include data on schools with fewer than 10 students.
         </p>
 
         <h2 class="info-title share-title">Credits</h2>
 
-        <p class="info-text">Tory Hargo, Paul Overberg, Chad Palmer, USA TODAY </p>
+        <p class="info-text">Chad Palmer, Tory Hargro, Steve Reilly, Meghan Hoyer and Nick Penzenstadler of USATODAY and Caitlin McGlade of the Arizona Republic </p>
 
-        <p class="info-text"><strong>Source: </strong> USA TODAY analysis of data from National Center for Education
-            Statistics.</p>
+        <p class="info-text"><strong>Source: </strong> USA TODAY Research</p>
 
         <p class="info-text"><strong>Photo Credits: </strong>USA TODAY</p>
 
