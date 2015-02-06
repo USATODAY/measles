@@ -18,6 +18,8 @@ mobile.arrStateText = [
     "Use the search section above to find your school.",
     "Use the search section above to find your school.",
     "Use the search section above to find your school.",
+    "Use the search section above to find your school.",
+    "Use the search section above to find your school.",
     "Illinois’ data includes all students K-12.",
     "Massachusetts’ Medical Exemption rate includes both medical and religious exemptions. In Massachusetts, data for schools with fewer than 30 kindergartners has been redacted.",
     "Minnesota’s Medical Exemption rate includes both medical and conscientious objections.",
@@ -26,6 +28,8 @@ mobile.arrStateText = [
     "Use the search section above to find your school.",
     "In Virginia, the location of each school refers to the state health district.",
     "Vermont’s data includes all students K-12.",
+    "Use the search section above to find your school.",
+    "Use the search section above to find your school.",
     "In West Virginia, data for schools with fewer than 30 kindergartners has been redacted."
 ];
 
@@ -357,11 +361,12 @@ $(document).ready(function () {
         $scope.companies = [];
         $scope.stateOptions = [
             {state: "State"},
+            {state: "AR"},
             {state: "AZ"},
             {state: "CA"},
             {state: "FL"},
-            {state: "FL"},
             {state: "GA"},
+            {state: "ID"},
             {state: "IL"},
             {state: "MA"},
             {state: "MN"},

@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="97181b00-7cf1-47b1-9976-7a9893984f28" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.min.js" afterPath="$PROJECT_DIR$/www/js/app.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.min.map" afterPath="$PROJECT_DIR$/www/js/app.min.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="measles.iws" />
@@ -53,19 +57,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="98" selection-start="4151" selection-end="4200" vertical-scroll-proportion="-17.952381" vertical-offset="499" max-vertical-offset="2016">
+            <state line="87" column="43" selection-start="4666" selection-end="4666" vertical-scroll-proportion="0.43219668" vertical-offset="499" max-vertical-offset="2016">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="363" column="23" selection-start="11183" selection-end="11183" vertical-scroll-proportion="0.3650546" vertical-offset="3888" max-vertical-offset="6396">
+            <state line="55" column="10" selection-start="2334" selection-end="2334" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6456">
               <folding />
             </state>
           </provider>
@@ -142,10 +146,10 @@
         <option value="$PROJECT_DIR$/js/data/ca.json" />
         <option value="$PROJECT_DIR$/js/data/va.json" />
         <option value="$PROJECT_DIR$/iframe.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/style/scss/_panel.scss" />
         <option value="$PROJECT_DIR$/style/scss/_mobile.scss" />
         <option value="$PROJECT_DIR$/js/app.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -272,6 +276,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../arrest-rates" />
     <property name="FullScreen" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -568,16 +573,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="98" selection-start="4151" selection-end="4200" vertical-scroll-proportion="-17.952381" vertical-offset="499" max-vertical-offset="2016">
+        <state line="55" column="10" selection-start="2334" selection-end="2334" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6456">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="363" column="23" selection-start="11183" selection-end="11183" vertical-scroll-proportion="0.3650546" vertical-offset="3888" max-vertical-offset="6396">
+        <state line="87" column="43" selection-start="4666" selection-end="4666" vertical-scroll-proportion="0.43219668" vertical-offset="499" max-vertical-offset="2016">
           <folding />
         </state>
       </provider>
