@@ -360,7 +360,8 @@ $(document).ready(function () {
             {state: "AZ"},
             {state: "CA"},
             {state: "FL"},
-            {state: "ID"},
+            {state: "FL"},
+            {state: "GA"},
             {state: "IL"},
             {state: "MA"},
             {state: "MN"},
@@ -369,6 +370,8 @@ $(document).ready(function () {
             {state: "RI"},
             {state: "VA"},
             {state: "VT"},
+            {state: "WA"},
+            {state: "WI"},
             {state: "WV"}
         ];
         $scope.stateItem = {

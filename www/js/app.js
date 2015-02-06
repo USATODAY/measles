@@ -12,7 +12,22 @@ mobile.arrDataText = jQuery(".data-text");
 mobile.arrDataNumbers = jQuery(".data-number");
 mobile.arrPies = jQuery(".pie-box");
 mobile.dataContainer = jQuery(".data-container");
-mobile.arrStateText = [];
+mobile.chatterBox = jQuery(".mobile-company-info-box");
+mobile.arrStateText = [
+    "Use the search section above to find your school.",
+    "Use the search section above to find your school.",
+    "Use the search section above to find your school.",
+    "Use the search section above to find your school.",
+    "Illinois’ data includes all students K-12.",
+    "Massachusetts’ Medical Exemption rate includes both medical and religious exemptions. In Massachusetts, data for schools with fewer than 30 kindergartners has been redacted.",
+    "Minnesota’s Medical Exemption rate includes both medical and conscientious objections.",
+    "Use the search section above to find your school.",
+    "New York’s data includes all students K-12. The MMR rate references the percentage of students who specifically have been vaccinated for measles.",
+    "Use the search section above to find your school.",
+    "In Virginia, the location of each school refers to the state health district.",
+    "Vermont’s data includes all students K-12.",
+    "In West Virginia, data for schools with fewer than 30 kindergartners has been redacted."
+];
 
 
 mobile.currentFocus = null;
@@ -319,7 +334,6 @@ $(document).ready(function () {
         $("#header").hide();
         $(".mobile-footer-link").hide();
         $(".article-button").hide();
-        //$(".mobile-company-info-box").hide();
     }
 
     mobile.listen();
@@ -346,7 +360,8 @@ $(document).ready(function () {
             {state: "AZ"},
             {state: "CA"},
             {state: "FL"},
-            {state: "ID"},
+            {state: "FL"},
+            {state: "GA"},
             {state: "IL"},
             {state: "MA"},
             {state: "MN"},
@@ -355,6 +370,8 @@ $(document).ready(function () {
             {state: "RI"},
             {state: "VA"},
             {state: "VT"},
+            {state: "WA"},
+            {state: "WI"},
             {state: "WV"}
         ];
         $scope.stateItem = {
@@ -362,10 +379,17 @@ $(document).ready(function () {
         };
 
         this.loadStateData = function () {
-            $http.get("js/data/" + mobile.stateMenu.eq(0).children("option:selected").text().toLowerCase() + ".json").then(function (data) {
-                mobile.data = data.data;
-                $scope.data = data.data;
-            });
+            mobile.panelWrap.eq(0).hide();
+            if (mobile.stateMenu.eq(0).children("option:selected").index() > 0) {
+                mobile.chatterBox.html(mobile.arrStateText[mobile.stateMenu.eq(0).children("option:selected").index() - 1]);
+                $http.get("js/data/" + mobile.stateMenu.eq(0).children("option:selected").text().toLowerCase() + ".json").then(function (data) {
+                    mobile.data = data.data;
+                    $scope.data = data.data;
+                });
+            } else {
+                mobile.chatterBox.html("Use the search section above to find your school.");
+            }
+            mobile.chatterBox.show();
         };
 
         this.checkMenu = function () {
@@ -416,9 +440,9 @@ $(document).ready(function () {
                 $scope.filteredArray.length = 0;
             }
             if ($scope.filteredArray.length === 0) {
-                $(".mobile-company-info-box").show();
+                mobile.chatterBox.show();
             } else {
-                $(".mobile-company-info-box").hide();
+                mobile.chatterBox.hide();
             }
 
             if ($scope.filterTerm !== "") {
@@ -427,7 +451,7 @@ $(document).ready(function () {
             }
             else {
                 $scope.isFormOpen = false;
-                $(".mobile-company-info-box").show();
+                mobile.chatterBox.show();
             }
         };
 
