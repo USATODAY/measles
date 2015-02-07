@@ -1,6 +1,8 @@
 .wrap.mobile-wrap{
-
-  background: white;
+  background-image: url(../img/measles-bg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 0%;
   bottom: auto;
   box-shadow: $shadow-standard;
   height: auto;
@@ -45,10 +47,11 @@
   }
 
   .mobile-head {
-    float: left;
-    font-size: 0.90em;
-    margin: .5em;
+    color: #fff;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
     padding-top: 7px;
+    text-transform: uppercase;
   }
 
   .data-popover{
@@ -87,7 +90,7 @@
   a { text-decoration: none};
   
   .mobile-back-bar {
-    background: $blue;
+    background: none;
     color: white;
     cursor: pointer;
     font-family: "Futura Today Light", Arial,sans-serif;
@@ -97,6 +100,12 @@
     text-transform: uppercase;
   }
 
+  .mobile-back-bar {
+    background: rgba(0,0,0,0.3);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
   .mobile-back-arrow {
     margin: 0 .5em;
     width: 0.5em;
@@ -130,6 +139,7 @@
   background-color: rgba(0, 0, 0, 0.30);
   border-radius: 2em;
   color: white;
+  display: none;
   font-family: "Futura Today Light", Arial,sans-serif;
   margin: 1em auto;
   max-width: 90%;

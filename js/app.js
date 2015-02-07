@@ -360,7 +360,7 @@ $(document).ready(function () {
 
         $scope.companies = [];
         $scope.stateOptions = [
-            {state: "State"},
+            {state: "Select a State to begin"},
             {state: "AR"},
             {state: "AZ"},
             {state: "CA"},

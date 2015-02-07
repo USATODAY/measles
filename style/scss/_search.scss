@@ -74,16 +74,18 @@ margin-bottom: 20px;
 }
 
 .state-menu {
-  background-color: rgba(0,0,0,0);
-  border: solid 2px #8d8f91;
-  color: #231f20;
+  background-color: $blue;
+  border: none;
+  color: #fff;
   font-size: 1.2em;
   font-family: "Futura Today", Arial,sans-serif;
   height: 50px;
   margin-right: 5px;
+  text-transform: uppercase;
 }
 .search-table {
   margin-top: 10px;
+  text-align: center;
 }
 .search-table.text {
   margin-left: 2%;
