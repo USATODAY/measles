@@ -13,6 +13,9 @@ mobile.arrDataNumbers = jQuery(".data-number");
 mobile.arrPies = jQuery(".pie-box");
 mobile.dataContainer = jQuery(".data-container");
 mobile.chatterBox = jQuery(".mobile-company-info-box");
+mobile.mainHead = jQuery(".mobile-head");
+mobile.searchTable = jQuery(".search-table");
+mobile.background = jQuery(".mobile-back-bar");
 mobile.arrStateText = [
     "Use the search section above to find your school.",
     "Use the search section above to find your school.",
@@ -22,6 +25,7 @@ mobile.arrStateText = [
     "Use the search section above to find your school.",
     "Illinois’ data includes all students K-12.",
     "Massachusetts’ Medical Exemption rate includes both medical and religious exemptions. In Massachusetts, data for schools with fewer than 30 kindergartners has been redacted.",
+    "Use the search section above to find your school.",
     "Minnesota’s Medical Exemption rate includes both medical and conscientious objections.",
     "Use the search section above to find your school.",
     "New York’s data includes all students K-12. The MMR rate references the percentage of students who specifically have been vaccinated for measles.",
@@ -369,6 +373,7 @@ $(document).ready(function () {
             {state: "ID"},
             {state: "IL"},
             {state: "MA"},
+            {state: "MI"},
             {state: "MN"},
             {state: "NC"},
             {state: "NY"},
@@ -385,6 +390,9 @@ $(document).ready(function () {
 
         this.loadStateData = function () {
             mobile.panelWrap.eq(0).hide();
+            mobile.mainHead.addClass("top");
+            mobile.searchTable.addClass("search");
+            mobile.background.addClass("dark");
             if (mobile.stateMenu.eq(0).children("option:selected").index() > 0) {
                 mobile.chatterBox.html(mobile.arrStateText[mobile.stateMenu.eq(0).children("option:selected").index() - 1]);
                 $http.get("js/data/" + mobile.stateMenu.eq(0).children("option:selected").text().toLowerCase() + ".json").then(function (data) {

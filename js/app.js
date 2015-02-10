@@ -13,6 +13,9 @@ mobile.arrDataNumbers = jQuery(".data-number");
 mobile.arrPies = jQuery(".pie-box");
 mobile.dataContainer = jQuery(".data-container");
 mobile.chatterBox = jQuery(".mobile-company-info-box");
+mobile.mainHead = jQuery(".mobile-head");
+mobile.searchTable = jQuery(".search-table");
+mobile.background = jQuery(".mobile-back-bar");
 mobile.arrStateText = [
     "Use the search section above to find your school.",
     "Use the search section above to find your school.",
@@ -22,6 +25,7 @@ mobile.arrStateText = [
     "Use the search section above to find your school.",
     "Illinois’ data includes all students K-12.",
     "Massachusetts’ Medical Exemption rate includes both medical and religious exemptions. In Massachusetts, data for schools with fewer than 30 kindergartners has been redacted.",
+    "Use the search section above to find your school.",
     "Minnesota’s Medical Exemption rate includes both medical and conscientious objections.",
     "Use the search section above to find your school.",
     "New York’s data includes all students K-12. The MMR rate references the percentage of students who specifically have been vaccinated for measles.",
@@ -73,7 +77,7 @@ mobile.renderTable = function (prop) {
     var strHTML = "";
     strHTML += '<table class="data-table" cellspacing="0" cellpadding="0" border="0">';
     strHTML += '    <tr>';
-    strHTML += '        <td>Measles, Mumps, Rubella</td>';
+    strHTML += '        <td class="vax-label">Measles, Mumps, Rubella</td>';
     numParam = prop.MMR;
     if (isNaN(numParam) || (numParam === "")) {
         strHTML += '        <td>NA</td>';
@@ -82,7 +86,7 @@ mobile.renderTable = function (prop) {
     }
     strHTML += '    </tr>';
     strHTML += '    <tr>';
-    strHTML += '        <td>Diphtheria, Tetanus, Pertussis</td>';
+    strHTML += '        <td class="vax-label">Diphtheria, Tetanus, Pertussis</td>';
     numParam = prop.DTaP;
     if (isNaN(numParam) || (numParam === "")) {
         strHTML += '        <td>NA</td>';
@@ -91,7 +95,7 @@ mobile.renderTable = function (prop) {
     }
     strHTML += '    </tr>';
     strHTML += '    <tr>';
-    strHTML += '        <td>Polio</td>';
+    strHTML += '        <td class="vax-label">Polio</td>';
     numParam = prop.Polio;
     if (isNaN(numParam) || (numParam === "")) {
         strHTML += '        <td>NA</td>';
@@ -100,7 +104,7 @@ mobile.renderTable = function (prop) {
     }
     strHTML += '    </tr>';
     strHTML += '    <tr>';
-    strHTML += '        <td>Hepatitis B</td>';
+    strHTML += '        <td class="vax-label">Hepatitis B</td>';
     numParam = prop.HepB;
     if (isNaN(numParam) || (numParam === "")) {
         strHTML += '        <td>NA</td>';
@@ -109,7 +113,7 @@ mobile.renderTable = function (prop) {
     }
     strHTML += '    </tr>';
     strHTML += '    <tr>';
-    strHTML += '        <td>Varicella</td>';
+    strHTML += '        <td class="vax-label">Varicella</td>';
     numParam = prop.Varicella;
     if (isNaN(numParam) || (numParam === "")) {
         strHTML += '        <td>NA</td>';
@@ -118,7 +122,7 @@ mobile.renderTable = function (prop) {
     }
     strHTML += '    </tr>';
     strHTML += '    <tr>';
-    strHTML += '        <td>Medical Exemptions</td>';
+    strHTML += '        <td class="vax-label red">Medical Exemptions</td>';
     numParam = prop.Medical;
     if (isNaN(numParam) || (numParam === "")) {
         strHTML += '        <td>NA</td>';
@@ -127,7 +131,7 @@ mobile.renderTable = function (prop) {
     }
     strHTML += '    </tr>';
     strHTML += '    <tr>';
-    strHTML += '        <td>Philosophical Exemptions</td>';
+    strHTML += '        <td class="vax-label red">Philosophical Exemptions</td>';
     numParam = prop.Philosophical;
     if (isNaN(numParam) || (numParam === "")) {
         strHTML += '        <td>NA</td>';
@@ -136,7 +140,7 @@ mobile.renderTable = function (prop) {
     }
     strHTML += '    </tr>';
     strHTML += '    <tr>';
-    strHTML += '        <td>Religious Exemptions</td>';
+    strHTML += '        <td class="vax-label red">Religious Exemptions</td>';
     numParam = prop.Religious;
     if (isNaN(numParam) || (numParam === "")) {
         strHTML += '        <td>NA</td>';
@@ -145,7 +149,7 @@ mobile.renderTable = function (prop) {
     }
     strHTML += '    </tr>';
     strHTML += '    <tr>';
-    strHTML += '        <td>Missing Records</td>';
+    strHTML += '        <td class="vax-label red">Missing Records</td>';
     numParam = prop.NoRecords;
     if (isNaN(numParam) || (numParam === "")) {
         strHTML += '        <td>NA</td>';
@@ -369,6 +373,7 @@ $(document).ready(function () {
             {state: "ID"},
             {state: "IL"},
             {state: "MA"},
+            {state: "MI"},
             {state: "MN"},
             {state: "NC"},
             {state: "NY"},
@@ -385,6 +390,9 @@ $(document).ready(function () {
 
         this.loadStateData = function () {
             mobile.panelWrap.eq(0).hide();
+            mobile.mainHead.addClass("top");
+            mobile.searchTable.addClass("search");
+            mobile.background.addClass("dark");
             if (mobile.stateMenu.eq(0).children("option:selected").index() > 0) {
                 mobile.chatterBox.html(mobile.arrStateText[mobile.stateMenu.eq(0).children("option:selected").index() - 1]);
                 $http.get("js/data/" + mobile.stateMenu.eq(0).children("option:selected").text().toLowerCase() + ".json").then(function (data) {

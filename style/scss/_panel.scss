@@ -4,9 +4,11 @@
 }
 
 .data-head {
+  color: #fff;
   display: none;
   font-family: "Futura Today", Arial,sans-serif;
-  font-size: 1.6em;
+  font-size: 1.1em;
+  margin-top: 1em;
   text-transform: uppercase;
 }
 
@@ -28,7 +30,7 @@
 
 .panel-wrap {
   color: $dark-grey;
-  
+  position: relative;
 }
 
 .data-wrap {
@@ -125,24 +127,38 @@
   margin-right: 2.5%
 }
 .data-text {
+  font-family: "Futura Today", Arial,sans-serif;
   font-size: 0.7em;
   text-transform: uppercase;
 }
 .data-number {
-    font-size: 2.4em;
+    font-size: 2.0em;
 }
 .data-container {
   text-align: center;
   width: 100%;
 }
 .data-table {
+  color: #fff;
   margin-bottom: 2em;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 3.2em;
   width: 90%;
 }
 .data-table td {
-  border-top: #000000 dotted 1px;
-  padding: 1%;
-  width: 44%;
+  border-top: #fff dotted 1px;
+  font-size: 0.7em;
+  padding: 1.0%;
+  width: 34%;
+}
+html.touch .data-table td {
+  padding: 1.0% 1.0% 1.8% 1.0%;
+}
+.data-table td.vax-label {
+  font-family: "Futura Today", Arial,sans-serif;
+  width: 54%;
+}
+.data-table td.vax-label.red {
+  color: #ff7163;
 }

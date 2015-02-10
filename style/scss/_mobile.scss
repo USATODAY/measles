@@ -24,9 +24,9 @@
   }
   
   #company_search_box {
-    background-color: rgba(0, 0, 0, 0);
-    border: solid 2px $light-grey;
-    color: $dark-grey;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: solid 1px #fff;
+    color: #000;
     font-size: 1.2em;
   }
   
@@ -50,8 +50,13 @@
     color: #fff;
     font-size: 1.5em;
     margin-bottom: 0.5em;
+    margin-top: 5em;
     padding-top: 7px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
     text-transform: uppercase;
+  }
+  .mobile-head.top {
+    margin-top: 0em;
   }
 
   .data-popover{
@@ -90,21 +95,13 @@
   a { text-decoration: none};
   
   .mobile-back-bar {
-    background: none;
-    color: white;
-    cursor: pointer;
-    font-family: "Futura Today Light", Arial,sans-serif;
-    font-size: 1.2em;
-    padding: .5em 0;
-    text-align: right;
-    text-transform: uppercase;
-  }
-
-  .mobile-back-bar {
     background: rgba(0,0,0,0.3);
     height: 100%;
     position: absolute;
     width: 100%;
+  }
+  .mobile-back-bar.dark {
+    background: rgba(0,0,0,0.7);
   }
   .mobile-back-arrow {
     margin: 0 .5em;
@@ -143,7 +140,7 @@
   font-family: "Futura Today Light", Arial,sans-serif;
   margin: 1em auto;
   max-width: 90%;
-  padding: 3em;
+  padding: 1em;
   text-align: center;
   text-transform: uppercase;
   width: 20em;
@@ -182,13 +179,10 @@ html.mobile {
 }
 
 a.article-button {
-  bottom: 22px;
-  font-size: 0.8em;
-  left: 50%;
+  float: left;
+  font-size: 0.7em;
   opacity: 1;
-  position: absolute;
   text-decoration: none;
-  transform: translate(-50%, 0);
   transition: opacity 300ms ease;
   z-index: 500;
   &:hover {
@@ -198,16 +192,16 @@ a.article-button {
 }
 
 .info-button {
-  bottom: 20px;
+  top: 0.9em;
   cursor: pointer;
   height: 50px;
   position: absolute;
-  left: 10px;
+  right: -0.8em;
   width: 50px;
   z-index: 500;
   img {
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
   }
 }
 

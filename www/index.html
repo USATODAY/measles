@@ -45,19 +45,20 @@
         src="http://www.usatoday.com/services/cobrand/header/"></iframe>
 <div class="preloader-mobile"><img src="img/loader-white.gif" alt="Loading"></div>
 <div class="wrap mobile-wrap" ng-controller="SearchController as search" ng-click="isFormOpen = false">
-
+    <div class="info-button" ng-click="showInfo()"><img src="img/info.svg" alt="info"></div>
     <div class="mobile-back-bar"></div>
 
     <div class="panel-inner-wrap">
         <div id="search_cont" class="pull-left">
             <div class="search-table">
-                <h1 class="mobile-head">Elementary Schools Immunization Rates</h1>
+                <h1 class="mobile-head intro">Elementary Schools Immunization Rates</h1>
                 <select class="state-menu" ng-model="stateItem.states" ng-options="item.state for item in stateOptions"
                         ng-change="search.loadStateData()">
                 </select>
+                <h1 class="mobile-head search">Elementary Schools Immunization Rates</h1>
             </div>
             <div class="search-table text">
-                <input type="text" class="form-control" id="company_search_box" placeholder="Enter school name"
+                <input type="text" class="form-control" id="company_search_box" placeholder="SEARCH FOR YOUR SCHOOL"
                        ng-model="filterTerm" ng-change="search.mobileSearch()" ng-show="search.checkMenu()">
             </div>
             <!-- <div class="clear-button" ng-click ="search.clear()"><img src="img/close-icon.svg" alt=""></div> -->
@@ -90,7 +91,7 @@
                 <div id="pie0" class="pie-box"></div>
                 <div class="data-block left">
                     <div class="data-number"></div>
-                    <div class="data-text">Complete Immunization</div>
+                    <div class="data-text">Complete</div>
                 </div>
             </div>
             <div class="data-container"></div>
@@ -98,11 +99,10 @@
     </div>
 
     <div class="inner-wrap buttom-buttons">
-        <div class="info-button" ng-click="showInfo()"><img src="img/info.svg" alt="info"></div>
         <a href="http://www.usatoday.com/story/news/2015/02/04/schoolvaccinationrates/22840549/"
            target="_blank" class="article-button button">Read Story</a>
 
-        <div class="share-button" ng-click="showShare()"><img src="img/options.svg" alt="share"></div>
+        <div class="share-button button" ng-click="showShare()">Share now</div>
     </div>
 
     <div class="share-page">

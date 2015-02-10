@@ -4,18 +4,26 @@
   text-transform: uppercase;
 }
 
-.share-button {
-  bottom: 20px;
+/*.share-button {
   cursor: pointer;
+  float: right;
   height: 50px;
-  position: absolute;
-  right: 10px;
   width: 50px;
   z-index: 500;
   img {
     height: 40px;
     width: 40px;
   }
+}
+*/
+
+.share-button {
+  float: right;
+  font-size: 0.7em;
+  opacity: 1;
+  text-decoration: none;
+  transition: opacity 300ms ease;
+  z-index: 500;
 }
 
 .share-page {
@@ -71,9 +79,13 @@
   width: 2em;
 }
 .buttom-buttons {
-  height: 60px;
-  margin-top: 10px;
-  position: relative;
+  bottom: 0.1em;
+  height: 38px;
+  padding-left: 0.7em;
+  padding-right: 0.7em;
+  position: absolute;
+  width: 100%;
+  z-index: 500;
 }
 
 .info-text {
