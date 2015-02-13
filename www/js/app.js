@@ -17,24 +17,28 @@ mobile.mainHead = jQuery(".mobile-head");
 mobile.searchTable = jQuery(".search-table");
 mobile.background = jQuery(".mobile-back-bar");
 mobile.arrStateText = [
-    "Use the search section above to find your school.",
-    "Use the search section above to find your school.",
-    "Use the search section above to find your school.",
-    "Use the search section above to find your school.",
-    "Use the search section above to find your school.",
-    "Use the search section above to find your school.",
-    "Illinois’ data includes all students K-12.",
-    "Massachusetts’ Medical Exemption rate includes both medical and religious exemptions. In Massachusetts, data for schools with fewer than 30 kindergartners has been redacted.",
-    "Use the search section above to find your school.",
-    "Minnesota’s Medical Exemption rate includes both medical and conscientious objections.",
-    "Use the search section above to find your school.",
-    "New York’s data includes all students K-12. The MMR rate references the percentage of students who specifically have been vaccinated for measles.",
-    "Use the search section above to find your school.",
-    "In Virginia, the location of each school refers to the state health district.",
-    "Vermont’s data includes all students K-12.",
-    "Use the search section above to find your school.",
-    "Use the search section above to find your school.",
-    "In West Virginia, data for schools with fewer than 30 kindergartners has been redacted."
+    "Arkansas' data represents vaccination levels for kindergarteners during the 2014-15 school year. Data for schools with enrollments of fewer than 10 kindergartners has been redacted.",
+    "Arizona's data represents vaccination levels for kindergartners during the 2013-14 school year. Data for schools with enrollments of fewer than 10 kindergartners has been redacted.",
+    "California's data represents vaccination levels for kindergartners during the 2014-15 school year. \"Complete\" means a student is entirely up-to-date on all recommended vaccines. Data for schools with enrollments of fewer than 10 kindergartners has been redacted.",
+    "Florida's data represents vaccination levels for kindergartners in public schools during the 2014-15 school year. \"Complete\" means a student is entirely up-to-date on all recommended vaccines. Data for schools with enrollments of fewer than 10 kindergartners has been redacted.",
+    "Georgia's data represents vaccination levels for kindergartners during the 2014-15 school year. \"Complete\" means a student is entirely up-to-date on all recommended vaccines. Data for schools with enrollments of fewer than 10 kindergartners has been redacted.",
+    "Idaho's data represents vaccination levels for kindergartners during the 2013-14 school year. \"Complete\" means a student is entirely up-to-date on all recommended vaccines. Data for schools with enrollments of fewer than 10 kindergartners has been redacted.",
+    "Illinois' data represents vaccination levels for all students K-12 during the 2013-14 school year. The MMR rate references students who specifically have been vaccinated for measles. Data for schools with enrollments of fewer than 10 students has been redacted.",
+    "Massachusetts' data represents vaccination levels for kindergartners during the 2013-14 school year. \"Complete\" means a student is entirely up-to-date on all recommended vaccines. Data for schools with enrollments of fewer than 30 kindergartners has been redacted.",
+    "Michigan's data represents vaccination levels for all students K-12 during the 2013-14 school year. \"Complete\" means a student is entirely up-to-date on all recommended vaccines. Data for schools with enrollments of fewer than 10 students has been redacted.",
+    "Minnesota's data represents vaccination levels for kindergartners during the 2013-14 school year.  The Medical Exemption rate includes both medical and conscientious objections. Data for schools with enrollments of fewer than 10 kindergartners has been redacted.",
+    "Mississippi's data represents vaccination levels for kindergarteners during the 2014-15 school year. \"Complete\" means a student is entirely up-to-date on all recommended vaccines. Data for schools with enrollments of fewer than 10 kindergartners has been redacted.",
+    "North Carolina's data represents vaccination levels for kindergartners during the 2013-14 school year. \"Complete\" means a student is entirely up-to-date on all recommended vaccines. Data for schools with enrollments of fewer than 10 kindergartners has been redacted.",
+    "North Dakota’s data represents vaccination levels for kindergarteners during the 2013-14 school year. Data for schools with enrollments of fewer than 10 kindergartners has been redacted.",
+    "New York's data represents vaccination levels of all students K-12 during the 2013-14 school year. The MMR rate references students who specifically have been vaccinated for measles. \"Complete\" means a student is entirely up-to-date on all recommended vaccines. Data for schools with enrollments of fewer than 10 students has been redacted.",
+    "Oregon's data represents only non-medical exemptions for all students K-12 during the 2013-14 school year. Data for schools with fewer than 50 students and for schools with fewer than 10 nonmedical exemptions has been redacted.",
+    "Rhode Island's data represents vaccination levels for kindergartners during the 2013-14 school year. \"Complete\" means a student is entirely up-to-date on all recommended vaccines. Data for schools with enrollments of fewer than 10 kindergartners has been redacted.",
+    "Tennessee's data represents vaccination levels for private-school kindergartners during the 2013-14 school year. \"Complete\" means a student is entirely up-to-date on all recommended vaccines. Data for schools with enrollments of fewer than 10 kindergartners has been redacted. Data from the state's public schools was unavailable.",
+    "Virginia's data represents vaccination levels for kindergartners during the 2013-14 school year. The location of each school refers to the state health district. \"Complete\" means a student is entirely up-to-date on all recommended vaccines. Data for schools with enrollments of fewer than 10 kindergartners has been redacted.",
+    "Vermont's data represents vaccination levels of all students K-12 during the 2013-14 school year. The MMR rate references students who specifically have been vaccinated for measles. \"Complete\" means a student is entirely up-to-date on all recommended vaccines. Data for schools with enrollments of fewer than 10 students has been redacted.",
+    "Washington's data represents vaccination levels for kindergartners during the 2013-14 school year. \"Complete\" means a student is entirely up-to-date on all recommended vaccines. Data for schools with enrollments of fewer than 10 kindergartners has been redacted.",
+    "Wisconsin's data represents vaccination levels of all students K-12 during the 2013-14 school year. \"Complete\" means a student is entirely up-to-date on all recommended vaccines. Data for schools with enrollments of fewer than 10 students has been redacted.",
+    "West Virginia's data represents vaccination levels for kindergartners during the 2013-14 school year. Schools with enrollments of fewer than 30 kindergartners have been omitted."
 ];
 
 
@@ -77,7 +81,7 @@ mobile.renderTable = function (prop) {
     var strHTML = "";
     strHTML += '<table class="data-table" cellspacing="0" cellpadding="0" border="0">';
     strHTML += '    <tr>';
-    strHTML += '        <td>Measles, Mumps, Rubella</td>';
+    strHTML += '        <td class="vax-label">Measles, Mumps, Rubella</td>';
     numParam = prop.MMR;
     if (isNaN(numParam) || (numParam === "")) {
         strHTML += '        <td>NA</td>';
@@ -86,7 +90,7 @@ mobile.renderTable = function (prop) {
     }
     strHTML += '    </tr>';
     strHTML += '    <tr>';
-    strHTML += '        <td>Diphtheria, Tetanus, Pertussis</td>';
+    strHTML += '        <td class="vax-label">Diphtheria, Tetanus, Pertussis</td>';
     numParam = prop.DTaP;
     if (isNaN(numParam) || (numParam === "")) {
         strHTML += '        <td>NA</td>';
@@ -95,7 +99,7 @@ mobile.renderTable = function (prop) {
     }
     strHTML += '    </tr>';
     strHTML += '    <tr>';
-    strHTML += '        <td>Polio</td>';
+    strHTML += '        <td class="vax-label">Polio</td>';
     numParam = prop.Polio;
     if (isNaN(numParam) || (numParam === "")) {
         strHTML += '        <td>NA</td>';
@@ -104,7 +108,7 @@ mobile.renderTable = function (prop) {
     }
     strHTML += '    </tr>';
     strHTML += '    <tr>';
-    strHTML += '        <td>Hepatitis B</td>';
+    strHTML += '        <td class="vax-label">Hepatitis B</td>';
     numParam = prop.HepB;
     if (isNaN(numParam) || (numParam === "")) {
         strHTML += '        <td>NA</td>';
@@ -113,7 +117,7 @@ mobile.renderTable = function (prop) {
     }
     strHTML += '    </tr>';
     strHTML += '    <tr>';
-    strHTML += '        <td>Varicella</td>';
+    strHTML += '        <td class="vax-label">Varicella</td>';
     numParam = prop.Varicella;
     if (isNaN(numParam) || (numParam === "")) {
         strHTML += '        <td>NA</td>';
@@ -122,7 +126,7 @@ mobile.renderTable = function (prop) {
     }
     strHTML += '    </tr>';
     strHTML += '    <tr>';
-    strHTML += '        <td>Medical Exemptions</td>';
+    strHTML += '        <td class="vax-label red">Medical Exemptions</td>';
     numParam = prop.Medical;
     if (isNaN(numParam) || (numParam === "")) {
         strHTML += '        <td>NA</td>';
@@ -131,7 +135,7 @@ mobile.renderTable = function (prop) {
     }
     strHTML += '    </tr>';
     strHTML += '    <tr>';
-    strHTML += '        <td>Philosophical Exemptions</td>';
+    strHTML += '        <td class="vax-label red">Philosophical Exemptions</td>';
     numParam = prop.Philosophical;
     if (isNaN(numParam) || (numParam === "")) {
         strHTML += '        <td>NA</td>';
@@ -140,7 +144,7 @@ mobile.renderTable = function (prop) {
     }
     strHTML += '    </tr>';
     strHTML += '    <tr>';
-    strHTML += '        <td>Religious Exemptions</td>';
+    strHTML += '        <td class="vax-label red">Religious Exemptions</td>';
     numParam = prop.Religious;
     if (isNaN(numParam) || (numParam === "")) {
         strHTML += '        <td>NA</td>';
@@ -149,7 +153,7 @@ mobile.renderTable = function (prop) {
     }
     strHTML += '    </tr>';
     strHTML += '    <tr>';
-    strHTML += '        <td>Missing Records</td>';
+    strHTML += '        <td class="vax-label red">Missing Records</td>';
     numParam = prop.NoRecords;
     if (isNaN(numParam) || (numParam === "")) {
         strHTML += '        <td>NA</td>';
@@ -375,9 +379,13 @@ $(document).ready(function () {
             {state: "MA"},
             {state: "MI"},
             {state: "MN"},
+            {state: "MS"},
             {state: "NC"},
+            {state: "ND"},
             {state: "NY"},
+            {state: "OR"},
             {state: "RI"},
+            {state: "TN"},
             {state: "VA"},
             {state: "VT"},
             {state: "WA"},

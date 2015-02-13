@@ -91,6 +91,10 @@ margin-bottom: 20px;
   margin-right: 5px;
   text-transform: uppercase;
 }
+.state-menu option {
+  background-color: $blue;
+  color: #fff;
+}
 .search-table {
   margin-top: 10px;
   text-align: center;
