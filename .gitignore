@@ -1,5 +1,6 @@
 **/*.css
 style/scss/*.map
+img/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
