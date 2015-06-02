@@ -2,96 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97181b00-7cf1-47b1-9976-7a9893984f28" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/measles.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.sass-cache/6c9dcea0383d64bacc33d06293d7c64dd3e203a9/_base.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.sass-cache/6c9dcea0383d64bacc33d06293d7c64dd3e203a9/_bits.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.sass-cache/6c9dcea0383d64bacc33d06293d7c64dd3e203a9/_buttons.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.sass-cache/6c9dcea0383d64bacc33d06293d7c64dd3e203a9/_chart.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.sass-cache/6c9dcea0383d64bacc33d06293d7c64dd3e203a9/_iframe.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.sass-cache/6c9dcea0383d64bacc33d06293d7c64dd3e203a9/_mobile.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.sass-cache/6c9dcea0383d64bacc33d06293d7c64dd3e203a9/_panel.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.sass-cache/6c9dcea0383d64bacc33d06293d7c64dd3e203a9/_preloader.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.sass-cache/6c9dcea0383d64bacc33d06293d7c64dd3e203a9/_search.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.sass-cache/6c9dcea0383d64bacc33d06293d7c64dd3e203a9/_share.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.sass-cache/6c9dcea0383d64bacc33d06293d7c64dd3e203a9/_typography.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.sass-cache/6c9dcea0383d64bacc33d06293d7c64dd3e203a9/project.scssc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/close.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/email.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/fb-share.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/fb.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/info.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/loader-white.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/loader.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/measles-bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/options.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/twitter.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/style/scss/project.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/style/scss/project.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/iframe.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/close.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/email.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/fb-share.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/fb.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/info.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/loader-white.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/loader.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/measles-bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/options.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/twitter.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/all2.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/ar.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/az.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/ca.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/fl.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/ga.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/ia.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/id.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/il.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/ky.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/ma.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/mi.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/mn.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/ms.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/nc.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/nd.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/ny.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/or.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/ri.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/sc.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/sd.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/tn.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/ut.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/va.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/vt.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/wa.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/wi.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/data/wv.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/output.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/style/project.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/style/project.css.map" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/AR_for_chad.xlsx" afterPath="$PROJECT_DIR$/source_data/AR_for_chad.xlsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GA_For_Chad.xlsx" afterPath="$PROJECT_DIR$/source_data/GA_For_Chad.xlsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/IA_SD_SC_for_Chad.xlsx" afterPath="$PROJECT_DIR$/source_data/IA_SD_SC_for_Chad.xlsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Ky_for_Chad.xlsx" afterPath="$PROJECT_DIR$/source_data/Ky_for_Chad.xlsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/MI_For_Chad.xlsx" afterPath="$PROJECT_DIR$/source_data/MI_For_Chad.xlsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Miss_Tenn_for_chad.xlsx" afterPath="$PROJECT_DIR$/source_data/Miss_Tenn_for_chad.xlsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ND_for_Chad.xlsx" afterPath="$PROJECT_DIR$/source_data/ND_for_Chad.xlsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/OR_for_Chad.xlsx" afterPath="$PROJECT_DIR$/source_data/OR_for_Chad.xlsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Utah_for_Chad.xlsx" afterPath="$PROJECT_DIR$/source_data/Utah_for_Chad.xlsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Vax_sample_for_interactive.xlsx" afterPath="$PROJECT_DIR$/source_data/Vax_sample_for_interactive.xlsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Wis_Wash_For_Chad.xlsx" afterPath="$PROJECT_DIR$/source_data/Wis_Wash_For_Chad.xlsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/data_for_Chad.xlsx" afterPath="$PROJECT_DIR$/source_data/data_for_Chad.xlsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.min.js" afterPath="$PROJECT_DIR$/www/js/app.min.js" />
@@ -131,7 +41,7 @@
       <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="0" selection-start="2962" selection-end="2962" vertical-scroll-proportion="0.14900662" vertical-offset="156" max-vertical-offset="6792">
+            <state line="404" column="23" selection-start="19357" selection-end="19357" vertical-scroll-proportion="0.51655626" vertical-offset="4224" max-vertical-offset="6912">
               <folding />
             </state>
           </provider>
@@ -276,6 +186,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="measles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="measles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="measles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -520,7 +444,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-2557" y="-383" width="2557" height="1367" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -653,7 +577,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="2962" selection-end="2962" vertical-scroll-proportion="0.14900662" vertical-offset="156" max-vertical-offset="6792">
+        <state line="404" column="23" selection-start="19357" selection-end="19357" vertical-scroll-proportion="0.51655626" vertical-offset="4224" max-vertical-offset="6912">
           <folding />
         </state>
       </provider>
